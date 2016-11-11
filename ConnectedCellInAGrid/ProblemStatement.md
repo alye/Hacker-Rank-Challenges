@@ -17,3 +17,32 @@ Given an  matrix, find and print the number of cells in the largest region in th
 ### Output Format
 
 Print the number of cells in the largest region in the given matrix.
+
+### Sample Input
+
+```
+4
+4
+1 1 0 0
+0 1 1 0
+0 0 1 0
+1 0 0 0
+```
+
+### Sample Output
+
+```
+5
+```
+
+### Explaination
+The diagram below depicts two regions of the matrix; for each region, the component cells forming the region are marked with an X:
+
+```
+X X 0 0     1 1 0 0
+0 X X 0     0 1 1 0
+0 0 X 0     0 0 1 0
+1 0 0 0     X 0 0 0
+```
+
+The first region has five cells and the second region has one cell. Because we want to print the number of cells in the largest region of the matrix, we print 5.
