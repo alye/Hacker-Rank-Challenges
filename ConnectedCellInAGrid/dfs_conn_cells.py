@@ -1,4 +1,19 @@
+"""
+Solution to the problem specified at : https://www.hackerrank.com/challenges/ctci-connected-cell-in-a-grid
+using Depth-First Search
+"""
+__author__ = "alye"
+
+
 class ConnectedGraph(object):
+
+    """Represents a graph corresponding to the connections in the matrix(Adjacency list style implementation).
+
+    Attributes:
+        nodes{int : []}: Set of all 1-value cells in the input matrix. The list represents the nodes it is connected to.
+
+    """
+
     def __init__(self, grid):
         self._no_of_rows = len(grid)
         self._no_of_columns = len(grid[0])
@@ -48,6 +63,16 @@ class ConnectedGraph(object):
 
 
 def get_depth(graph, entry_node, visited_nodes={}):
+    """Performs Depth-First Search starting at a given node
+
+    Args:
+        graph(Graph): An object corresponding to the input matrix
+        entry_node(int): Unique identifier for the start node
+        visited_nodes({int : None}): The nodes that have already been visited\
+
+    Returns:
+        The depth of the graph
+    """
     my_depth = 1
     visited_nodes[entry_node] = None
     for adj_node in graph.nodes[entry_node]:
@@ -70,7 +95,7 @@ def get_biggest_region(grid):
 
 
 def main():
-    """Performs basic input-output tasks"""
+    """Performs basic input - output tasks"""
     import sys
     sys.stdin = open("input.txt", 'r')
     n = int(raw_input().strip())
